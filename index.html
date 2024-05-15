@@ -6,8 +6,22 @@
     <title>Bringing Data From API</title>
 </head>
 <body>
+    
+    <script>
 
+        fetch('https://api.chucknorris.io/jokes/random?category=food')
+ 	    .then(response=>response.json())
+        .then(json => document.getElementById("chucks").innerHTML=json.value)
+        .catch(error => console.log('unable to reach URL'+error));
+  
+
+
+    </script>
     <h1>Bringing Data using API</h1>
+
+    <label>What's chuck doing today?</label>
+    <p id="chucks"></p>
+
     
 </body>
 </html>
